@@ -7,7 +7,7 @@ import java.util.regex.*;
 import java.lang.*;
 
 
-
+//finf the uniqeue vowel and consonant
 class Alphabet{
 	public int uniqueVowel(String str) {
 		int a=0,e=0,i=0,o=0,u=0;
