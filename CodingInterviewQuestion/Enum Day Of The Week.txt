@@ -1,0 +1,76 @@
+Coding Exercise - Enum Day Of The Week
+You are given an incomplete DaysOfWeek enum in Java.
+
+The DaysOfWeek enum represents the seven days of the week: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, and SUNDAY. Each day has a name represented as a string.
+
+Your task is to complete the following methods:
+
+getName(): This method should return the name of the day.
+
+isWeekday(): This method should return true if the day is a weekday (i.e., Monday to Friday), and false otherwise.
+
+isHoliday(): This method should return true if the day is a holiday (i.e., Saturday or Sunday), and false otherwise.
+
+Detailed Examples
+
+Example 1
+
+Consider the day TUESDAY.
+
+For the getName() method, the output should be "Tuesday".
+
+For the isWeekday() method, the output should be true since Tuesday is a weekday.
+
+For the isHoliday() method, the output should be false since Tuesday is not a holiday.
+
+Example 2
+
+Consider the day SATURDAY.
+
+For the getName() method, the output should be "Saturday".
+
+For the isWeekday() method, the output should be false since Saturday is not a weekday.
+
+For the isHoliday() method, the output should be true since Saturday is a holiday.
+
+
+
+enum DaysOfWeek {
+    MONDAY("Monday"),
+    TUESDAY("Tuesday"),
+    WEDNESDAY("Wednesday"),
+    THURSDAY("Thursday"),
+    FRIDAY("Friday"),
+    SATURDAY("Saturday"),
+    SUNDAY("Sunday");
+
+    private String name;
+
+    DaysOfWeek(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        // Write your code here to return the name of the day
+        return this.name;
+    }
+
+    public boolean isWeekday() {
+        // Write your code here to check if this day is a weekday
+        //return this != SATURDAY && this != SUNDAY;
+        return !isHoliday();
+    }
+
+    public boolean isHoliday() {
+        // Write your code here to check if this day is a holiday
+        //return !isWeekday();
+        //return this == SATURDAY || this == SUNDAY;
+        switch(this){
+            case SATURDAY , SUNDAY:
+                return true;
+            default:
+                return false;
+                
+        }
+    } 
+}
